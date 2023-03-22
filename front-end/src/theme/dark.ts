@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 
-export const darkTheme : DefaultTheme = {
-  backGround: '#000000',
+export const RoseTheme : DefaultTheme = {
+  backGround: '#7159c1',
   onBackGround: '#FFF',
   secondary: '#171717',
   gray300: '#434344',
