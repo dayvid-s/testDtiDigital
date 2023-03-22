@@ -1,9 +1,9 @@
 # Welcome to React reminder app (TS) 👋
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D11.0.0-blue.svg)
-![Prerequisite](https://img.shields.io/badge/npm-%3E%3D6.0-blue.svg)
-![Prerequisite](https://img.shields.io/badge/yarn-%3E%3D1.16.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D15.0.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/npm-%3E%3D8.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/yarn-%3E%3D1.20.0-blue.svg)
 
 
 
