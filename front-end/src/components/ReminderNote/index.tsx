@@ -10,6 +10,7 @@ import {
 } from "./styles";
 import compareAsc from 'date-fns/compareAsc'
 import isDate from 'date-fns/isDate'
+import format from "date-fns/format";
 
 
 export function ReminderNote({notes, setUserNotes}) {
@@ -17,8 +18,6 @@ export function ReminderNote({notes, setUserNotes}) {
   const [userDate,setUserDate] = useState<Date >()
 
   const result = compareAsc(userDate, new Date()) // retorna 1 se a primeira data for posterior a segunda, e -1 pro oposto
-  console.log( userDate, new Date())
-  console.log(isDate(userDate)? 'true': 'false')
   function validateReminder(){
     let error = false
 
@@ -30,7 +29,7 @@ export function ReminderNote({notes, setUserNotes}) {
     }
       if(isDate(userDate) === false || result=== -1){ 
         error= true
-        alert('Não foi possível criar lembrete, por favor insira uma data válida.')
+        alert('Não foi possível criar lembrete, por favor insira uma data válida, e maior que a de hoje.')
       }
   
     
@@ -38,12 +37,11 @@ export function ReminderNote({notes, setUserNotes}) {
   }
   function handleCreateReminderNote(){
     if(validateReminder()){
-      // let userInfo={ name: name, userDate: dateOfToday.toLocaleDateString('pt-BR')}
       // let userInfo={ name: name, userDate: ''}
-      // const dadosArray = [...userInfo, name];
-
+      // var dateformated = format(userDate, 'dd/MM/yyyy')
+      // let userInfo=[ name,  dateformated]
+      // const dadosArray = [...notes, userInfo]
       // setUserNotes(dadosArray)
-      console.log(notes)
     
   }}
 
