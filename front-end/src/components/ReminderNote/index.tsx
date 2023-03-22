@@ -8,48 +8,44 @@ import {
   SubmitArea,
   SubmitButton
 } from "./styles";
+import compareAsc from 'date-fns/compareAsc'
+import isDate from 'date-fns/isDate'
+
 
 export function ReminderNote({notes, setUserNotes}) {
   const [name,setName] = useState('')
-  const [userDate,setUserDate] = useState<Date | null>()
-  var dateOfToday
+  const [userDate,setUserDate] = useState<Date >()
+
+  const result = compareAsc(userDate, new Date()) // retorna 1 se a primeira data for posterior a segunda, e -1 pro oposto
+  console.log( userDate, new Date())
+  console.log(isDate(userDate)? 'true': 'false')
   function validateReminder(){
     let error = false
 
     if (name === ''  ){
       let errorText = 'Dados incompletos'
       error = true
-              alert('Não foi possível criar lembrete, por favor revise os campos.')
+        alert('Não foi possível criar lembrete, por favor escreva o nome do lembrete')
 
     }
-    function toDate(dateStr: string) {
-      dateOfToday= new Date(dateStr.split('/').reverse().join('-') + ' 00:00:00')
-      if(userDate !instanceof Date || userDate < dateOfToday){ 
+      if(isDate(userDate) === false || result=== -1){ 
         error= true
-        alert('Não foi possível criar lembrete, por favor revise os campos.')
+        alert('Não foi possível criar lembrete, por favor insira uma data válida.')
       }
-      
-    }
-    const actualDate = new Date();
-    toDate(actualDate.toLocaleDateString('pt-BR'))
   
     
     return !error    // it will just exit the function if has no errors.
   }
   function handleCreateReminderNote(){
     if(validateReminder()){
-      let userInfo={ name: name, userDate: dateOfToday.toLocaleDateString('pt-BR')}
-      const dadosArray = [...notes, userInfo];
+      // let userInfo={ name: name, userDate: dateOfToday.toLocaleDateString('pt-BR')}
+      // let userInfo={ name: name, userDate: ''}
+      // const dadosArray = [...userInfo, name];
 
-      setUserNotes(dadosArray)
+      // setUserNotes(dadosArray)
       console.log(notes)
-    }else{
-      
-      // {console.log('não criou')}
-      
-    }
     
-  }
+  }}
 
   return (
     
