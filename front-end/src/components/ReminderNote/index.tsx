@@ -19,19 +19,15 @@ export function ReminderNote({notes, setUserNotes}) {
     if (name === ''  ){
       let errorText = 'Dados incompletos'
       error = true
+              alert('Não foi possível criar lembrete, por favor revise os campos.')
+
     }
     function toDate(dateStr: string) {
       dateOfToday= new Date(dateStr.split('/').reverse().join('-') + ' 00:00:00')
-      if(userDate !instanceof Date && userDate < dateOfToday){ 
+      if(userDate !instanceof Date || userDate < dateOfToday){ 
         error= true
         alert('Não foi possível criar lembrete, por favor revise os campos.')
       }
-
-      //   return
-      // }else{
-      //   error= true
-        // alert('Não foi possível criar lembrete, por favor revise os campos.')
-      
       
     }
     const actualDate = new Date();

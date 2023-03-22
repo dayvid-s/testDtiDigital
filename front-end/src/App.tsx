@@ -9,7 +9,6 @@ import { useState } from 'react';
 export function App() {
   
   const  [userNotes, setUserNotes] =useState([])
-  // console.log(userNotes)
   
   return (
     <ThemeProvider theme={themes['RoseTheme']}>

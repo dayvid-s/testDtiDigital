@@ -1,42 +1,28 @@
 // @ts-nocheck
-import { useState } from "react";
-
 import { 
-  Cadastro,
   Container,
-  HeaderComponent,
+  ReminderNoteArea,
   List,
   ListItem,
-  NameArea,
-  NameTask,
+  NameReminder,
   NewStickyNoteText,
-  ReminderNoteArea,
-  SubmitArea,
-  SubmitButton 
+  SubmitButton, 
 } from "./styles";
 
 export function UserNotes({notes, setUserNotes}) {
-  let datess=[new Date(2021,12,12), new Date(2021,12,12), new Date(2021,12,12), new Date(2021,12,12)]
-  const [name,setName] = useState('')
-  const [userDate, setUserDate] = useState<Date | null>()
-
-  console.log(notes)
   return (
-
-    
     <Container>
+      <NewStickyNoteText>Meus lembretes:</NewStickyNoteText>  
 
-      {/* <HeaderComponent> */}
-        <NewStickyNoteText>Meus lembretes:</NewStickyNoteText>  
-        <Cadastro>
+      <ReminderNoteArea>
         <form >
         </form>
-      </Cadastro>
+      </ReminderNoteArea>
       <List>
         {notes.map((note, index) => {
           return (
             <ListItem key={index}>
-              <NameTask >{note}</NameTask>
+              <NameReminder >{note}</NameReminder>
               <div>
                 <SubmitButton type="button" >Apagar</SubmitButton>
               </div>
